@@ -2,203 +2,352 @@
 layout: base
 title: Student Home 
 description: Home Page
+image: /images/mario_animation.png
 hide: true
 ---
 
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
 
-<body>
-<!---->
-    <div class="background-container">
-        <div class="background-image"></div>
-        <div class="background-overlay"></div>
-<!---->
-        <div id="top_content">
-            <p>Ansh Kumar</p>
-        </div>
-    </div>
-<!---->
-    <div class="lower_container">
-        <div class="about_visuals">
-            <div class="titles">
-                <div class="lower_content">
-                    <p style="color: #1260cc">Deep Learning<span style="color: white">.</span></p>
-                </div>
-                <div class="lower_content">
-                    <p style="color: #5579c6">Network Engineering<span style="color: white">.</span></p>
-                </div>
-                <div class="lower_content">
-                    <p style="color: #3a9bdc">Cybersecurity<span style="color: white">.</span></p>
-                </div>
-                <div class="lower_content">
-                    <p style="color: #29c5f6">Front-end Development<span style="color: white">.</span></p>
-                </div>
-            </div>
-            <div class="images">
-                <div>
-                    <img src="csp_collage.png">
-                </div>
-            </div>
-        </div>
-        <div class="moo">
-            <p>Hi, I'm Ansh. I'm a 10th grader at Del Norte High School. Above are the things that represent me; I'm big into volunteer work, as I hold classes for underprovileged IIT (and other engineering school) students and graduates in an effort to strengthen their interpersonal and communication skills for interviews and overall workplace conduct. I enjoy listening to music, hanging out with my friends, and playing with my dog, Magic. I plan on majoring in computer science (not sure which discipline), and thus far that's been a huge part of my acedemic career.</p>
-        </div>
-    </div>
-    <!---->
-    
-</body>
+
+<!-- Liquid:  statements -->
+
+<!-- Include submenu from _includes to top of pages -->
+<!--- Concatenation of site URL to frontmatter image  --->
+{% assign sprite_file = site.baseurl | append: page.image %}
+<!--- Has is a list variable containing mario metadata for sprite --->
+{% assign hash = site.data.mario_metadata %}  
+<!--- Size width/height of Sprit images --->
+{% assign pixels = 256 %} 
+
+<!--- HTML for page contains <p> tag named "Mario" and class properties for a "sprite"  -->
+
+<p id="mario" class="sprite"></p>
+  
+<!--- Embedded Cascading Style Sheet (CSS) rules, 
+        define how HTML elements look 
+--->
+<style>
+
+  /*CSS style rules for the id and class of the sprite...
+  */
+  .sprite {
+    height: {{pixels}}px;
+    width: {{pixels}}px;
+    background-image: url('{{sprite_file}}');
+    background-repeat: no-repeat;
+  }
+
+  /*background position of sprite element
+  */
+  #mario {
+    background-position: calc({{animations[0].col}} * {{pixels}} * -1px) calc({{animations[0].row}} * {{pixels}}* -1px);
+  }
+</style>
 
 <style>
-    body {
-        padding: 0;
-        margin: 0;
-        height: auto;
-        overflow-y: auto;
-    }
-
-    .about_visuals {
-        display:flex;
-        justify-content: space-between;
-    }
-
-    .images {
-        margin-top: 10%
-    }
-
-    img {
-        width: 270px;
-        height: 480px;
-    }
-
-    .background-container {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-height: 100vh;
-        overflow: hidden;
-        background-color: black;
-    }
-
-    .background-image {
-        background-image: url("background_2.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .background-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    #top_content {
-        color: white;
-        font-family:'Noto Sans', sans-serif;
-        font-size: 85px;
-        position: relative;
-        transform:translateY(250%);
-        padding-left: 5%;
-    }
-
-    .lower_content {
-        color:white;
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 40px;
-        margin-top: 25%;
-        height: 0.5em; 
-        position: relative;
-        opacity: 1;
-        filter:blur(5px);
-        transform: translateY(-400%);
-        transition: all 1s;
-    }
-
-    .show_lower_content {
-        filter:blur(0px);
-        opacity: 1;
-        transform: translateY(0%);
-    }
-
-    .moo {
-        padding-top: 10%;
-        font-family: 'Noto Sans', sans-serif;
-        color: #1e7b9e;
-        font-weight:200;
-        font-size: 20px;
-        opacity: 0;
-    }
-
-    .trigger-typewriter {
-        opacity: 1;
+    h2 {
+        color: rgb(75, 186, 255);
     }
 </style>
 
+<h1>Home</h1>
+<p><br /></p>
+
+<h2>
+  Unit 1: 
+</h2>
+<p>   </p>
+
+<table>
+  <tr>
+    <th>Week</th>
+    <th>Plans</th>
+    <th>Hacks(Todo)</th>
+    <th>Tangibles</th>
+  </tr>
+  
+  <tr>
+  <td> 0 </td> 
+  <td>
+  </td>
+
+  <td>
+  </td>
+  
+  <td>
+
+  </td>
+  </tr>
+</table>
+
+<h2>Unit 2:</h2>
+<p>
+</p>
+
+<table>
+  <tr>
+    <th>Week</th>
+    <th>Plans</th>
+    <th>Hacks(Todo)</th>
+    <th>Tangibles</th>
+  </tr>
+
+  
+
+    
+  <tr>
+  <td> 0 </td> 
+
+  <td>
+  </td>
+
+  <td>
+  </td>
+
+  <td>
+  </td>
+
+  </tr>
+</table>
+
+
+<br>
+
+<div>
+  <button id="factButton" style="padding-bottom: 5px; color:#1260cc;">Get a Random Manchester United Fact</button>
+</div>
+
+
+<!-- Add an empty paragraph to display the fact -->
+<p id="factDisplay" style="color:white; font-weight:bold;"></p>
+
 <script>
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        console.log(entry);
-        if(entry.isIntersecting) {
-            entry.target.classList.add('show_lower_content');
-        }
-    })
-});
+  // Array of random ManU facts
+  const ManUFacts = [
+    "Since 1992, Manchester United has won the Premier League 13 times",
+    "1 in 8 people of the world’s population is a Man Utd fan...",
+    "The Red Devils have more national titles than Liverpool........",
+    "Manchester United was founded in 1878 as Newton Heath LYR F.C.",
+    "Old Trafford, Manchester United's home ground, has a capacity of around 74,000.",
+    "Manchester United the first English club to win the European Cup in 1968.",
+    "Manchester United's nickname is 'The Red Devils.'"
+  ];
+
+  // Function to get a random fact
+  function getRandomFact() {
+    const randomIndex = Math.floor(Math.random() * ManUFacts.length);
+    return ManUFacts[randomIndex];
+  }
+
+  // Event listener for the button
+  document.getElementById('factButton').addEventListener('click', () => {
+    const fact = getRandomFact();
+    console.log(fact)
+    document.getElementById('factDisplay').textContent = fact;
+  });
+</script>
+
+<br>
+<br>
+
+<div>
+  <a href="liverpool-fc/index.html" style="color: #1260cc"><button>Go to Liverpool FC Blog (cooperative tangible)</button></a>
+</div>
 
 
-const lowerContent = document.querySelectorAll('.lower_content');
-
-lowerContent.forEach((el) => observer.observe(el));
 
 
 
 
 
+<!--mario stuff-->
+<script>
+        window.addEventListener("keydown", function(e) { if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) { e.preventDefault(); } }, false);
+  ////////// convert YML hash to javascript key:value objects /////////
 
+var mario_metadata = {}; // Key-value object
+{% for animation in hash %}   
+  mario_metadata["{{animation[0]}}"] = {
+    row: {{animation[1].row}},
+    col: {{animation[1].col}},
+    frames: {{animation[1].frames}}
+  };
+{% endfor %}
+  
+  var key = "{{key | first}}"  //key
+  var values = {} //values object
+  values["row"] = {{key.row}}
+  values["col"] = {{key.col}}
+  values["frames"] = {{key.frames}}
+  mario_metadata[key] = values; //key with values added
 
+  {% endfor %}
 
+  ////////// game object for player /////////
 
-function typeWriter(element) {
-    const text = element.textContent; // Get the text inside the element
-    element.textContent = ''; // Clear the content first
-    let i = 0;
-
-    // Function to type each character one by one
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, 20); // Speed of typing
-        }
+  class Mario {
+    constructor(meta_data) {
+      this.tID = null;  //capture setInterval() task ID
+      this.positionX = 0;  // current position of sprite in X direction
+      this.currentSpeed = 0;
+      this.marioElement = document.getElementById("mario"); //HTML element of sprite
+      this.pixels = {{pixels}}; //pixel offset of images in the sprite, set by liquid constant
+      this.interval = 100; //animation time interval
+      this.obj = meta_data;
+      this.marioElement.style.position = "absolute";
     }
 
-    type(); // Start typing
-}
+    animate(obj, speed) {
 
-// New observer for ".moo" class elements
-const mooObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('trigger-typewriter'); // Add a class if needed
-            typeWriter(entry.target); // Apply typewriter effect
-            mooObserver.unobserve(entry.target); // Unobserve after applying
+      let frame = 0;
+
+    console.log('obj.row:', obj.row);
+    console.log('this.pixels:', this.pixels);
+
+      const row = obj.row * this.pixels;
+      this.currentSpeed = speed;
+
+      this.tID = setInterval(() => {
+        const col = (frame + obj.col) * this.pixels;
+        this.marioElement.style.backgroundPosition = `-${col}px -${row}px`;
+        this.marioElement.style.left = `${this.positionX}px`;
+
+        this.positionX += speed;
+        frame = (frame + 1) % obj.frames;
+
+        const viewportWidth = window.innerWidth;
+        if (this.positionX > viewportWidth - this.pixels) {
+          document.documentElement.scrollLeft = this.positionX - viewportWidth + this.pixels;
         }
-    });
-});
+      }, this.interval);
+    }
 
-// Observe ".moo" elements
-const mooContent = document.querySelectorAll('.moo');
-mooContent.forEach((el) => mooObserver.observe(el));
+    startWalking() {
+      this.stopAnimate();
+      this.animate(this.obj["Walk"], 3);
+    }
+    startWalkingLeft() {
+      this.stopAnimate();
+      this.animate(this.obj["WalkL"], -3);
+    }
+
+    startRunningLeft() {
+      this.stopAnimate();
+      this.animate(this.obj["Run1L"], -6);
+    }
+
+    startRunning() {
+      this.stopAnimate();
+      this.animate(this.obj["Run1"], 6);
+    }
+
+    startPuffing() {
+      this.stopAnimate();
+      this.animate(this.obj["Puff"], 0);
+    }
+
+    startCheering() {
+      this.stopAnimate();
+      this.animate(this.obj["Cheer"], 0);
+    }
+
+    startFlipping() {
+      this.stopAnimate();
+      this.animate(this.obj["Flip"], 0);
+    }
+
+    startResting() {
+      this.stopAnimate();
+      this.animate(this.obj["Rest"], 0);
+    }
+
+    stopAnimate() {
+      clearInterval(this.tID);
+    }
+  }
+
+  const mario = new Mario(mario_metadata);
+
+  ////////// event control /////////
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight" || event.key === "d") {
+      event.preventDefault();
+      if (event.repeat) {
+        mario.startCheering();
+      } else {
+        if (mario.currentSpeed === 0) {
+          mario.startWalking();
+        } else if (mario.currentSpeed === 3) {
+          mario.startRunning();
+        }
+      }
+    } else if (event.key === "ArrowDown" || event.key === "s") {
+      event.preventDefault();
+      if (event.repeat) {
+        mario.stopAnimate();
+      } else {
+        mario.startPuffing();
+      }
+    } else if (event.key === "ArrowUp" || event.key === "w") {
+      event.preventDefault();
+      if (event.repeat) {
+          mario.stopAnimate();
+      } else {
+          mario.startFlipping();
+      }
+    } else if (event.key === "ArrowLeft" || event.key === "a") {
+      event.preventDefault();
+      if (event.repeat) {
+          mario.startCheering();
+      } else {
+          if (mario.currentSpeed === 0) {
+          mario.startWalkingLeft();
+        } else if (mario.currentSpeed === -3) {
+          mario.startRunningLeft();
+        } else if (mario.currentSpeed === 3) {
+          mario.startWalkingLeft();
+        } else if (mario.currentSpeed === 6) {
+          mario.startWalkingLeft();
+        }
+      }
+    }
+
+  });
+
+  //touch events that enable animations
+  window.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // prevent default browser action
+    if (event.touches[0].clientX > window.innerWidth / 2) {
+      // move right
+      if (currentSpeed === 0) { // if at rest, go to walking
+        mario.startWalking();
+      } else if (currentSpeed === 3) { // if walking, go to running
+        mario.startRunning();
+      }
+    } else {
+      // move left
+      mario.startPuffing();
+    }
+  });
+
+  //stop animation on window blur
+  window.addEventListener("blur", () => {
+    mario.stopAnimate();
+  });
+
+  //start animation on window focus
+  window.addEventListener("focus", () => {
+     mario.startFlipping();
+  });
+
+  //start animation on page load or page refresh
+  document.addEventListener("DOMContentLoaded", () => {
+    // adjust sprite size for high pixel density devices
+    const scale = window.devicePixelRatio;
+    const sprite = document.querySelector(".sprite");
+    sprite.style.transform = `scale(${0.2 * scale})`;
+    mario.startResting();
+  });
+
+  console.log(mario_metadata)
 </script>
