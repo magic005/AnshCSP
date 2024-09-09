@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap);
+
 //Default Overrides For Styles In Minima 
 // If you wish to override any of this CSS, do so in _sass/minima/custom-styles.css
 
@@ -24,13 +26,14 @@ color: light-grey;
 .page-content {
   -webkit-font-smoothing: antialiased !important;
   text-rendering: optimizeLegibility !important;
-  font-family: "Segoe UI", SegoeUI, Roboto, "Segoe WP", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif !important;
+  font-family: 'Noto Sans', sans-serif !important;
 }
 
 // make non-headings slightly lighter
 .post-content p, .post-content li {
 font-size: 20px;
 color: #515151;
+font-family: 'Noto Sans', sans-serif;
 }
 
 .post-link{
@@ -60,6 +63,7 @@ font-weight: normal !important;
 margin-bottom:0.5rem !important;  
 code {
 font-size: 100%;
+font-family: 'Noto Sans,' sans-serif;
 }
 }
 
