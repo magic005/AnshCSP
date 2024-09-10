@@ -2,7 +2,7 @@ title: Ansh's Blog
 owner_name: Ansh Kumar
 github_username: magic005
 github_repo: "AnshCSP" 
-baseurl: "/AnshCSP"
+baseurl: ""
 future: true
 remote_theme: jekyll/minima
 minima:
