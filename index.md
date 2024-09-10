@@ -164,14 +164,8 @@ hide: true
         window.addEventListener("keydown", function(e) { if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) { e.preventDefault(); } }, false);
   ////////// convert YML hash to javascript key:value objects /////////
 
-var mario_metadata = {}; // Key-value object
-{% for animation in hash %}   
-  mario_metadata["{{animation[0]}}"] = {
-    row: {{animation[1].row}},
-    col: {{animation[1].col}},
-    frames: {{animation[1].frames}}
-  };
-{% endfor %}
+  var mario_metadata = {}; //key, value object
+  {% for key in hash %}   
   
   var key = "{{key | first}}"  //key
   var values = {} //values object
@@ -197,12 +191,7 @@ var mario_metadata = {}; // Key-value object
     }
 
     animate(obj, speed) {
-
       let frame = 0;
-
-    console.log('obj.row:', obj.row);
-    console.log('this.pixels:', this.pixels);
-
       const row = obj.row * this.pixels;
       this.currentSpeed = speed;
 
