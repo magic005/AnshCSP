@@ -153,6 +153,26 @@ hide: true
   <a href="liverpool-fc/index.html" style="color: #1260cc"><button>Go to Liverpool FC Blog (cooperative tangible)</button></a>
 </div>
 
+<br>
+<br>
+
+<div>
+  <a href="game_menu/index_game.html"><button>Games Menu</button><a>
+</div>
+
+<br>
+<br>
+
+<div>
+  <a href="calcs/sci_calc.html"><button>Scientific Calculator</button><a>
+</div>
+
+<br>
+
+<div>
+  <a href="calcs/stat_calc.html"><button>Statistics Calculator</button><a>
+</div>
+
 
 
 
