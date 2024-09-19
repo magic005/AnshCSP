@@ -1,10 +1,10 @@
 // Example data for key players
 const players = [
-    "Mohamed Salah",
-    "Virgil van Dijk",
-    "Alisson Becker",
-    "Trent Alexander-Arnold",
-    "Jordan Henderson"
+    "Marcus Rashford",
+    "Rasmus Højlund",
+    "Diogo Dalot",
+    "Lisandro Martínez",
+    "Antony Aura 😈"
 ];
 
 function loadPlayers() {

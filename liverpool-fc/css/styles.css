@@ -8,7 +8,7 @@ body {
 
 /* Updated Navbar CSS */
 header {
-    background-color: #c8102e;
+    background-color: #0d5084;
     color: white;
     padding: 10px;  /* Reduced padding */
     text-align: center;
@@ -55,7 +55,7 @@ form label, form input, form textarea {
 }
 
 form button {
-    background-color: #c8102e;
+    background-color: #0d5084;
     color: white;
     border: none;
     padding: 10px;
@@ -63,11 +63,11 @@ form button {
 }
 
 form button:hover {
-    background-color: #a00;
+    background-color: #0d5084;
 }
 
 footer {
-    background-color: #c8102e;
+    background-color: #0d5084;
     color: white;
     text-align: center;
     padding: 10px 0;
