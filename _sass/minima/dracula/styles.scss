@@ -3,6 +3,11 @@
 //Default Overrides For Styles In Minima 
 // If you wish to override any of this CSS, do so in _sass/minima/custom-styles.css
 
+:root {
+  --default-canvas-filter: invert(100%);
+  font-family: 'Noto Sans', sans-serif;
+}
+
 .post img {
   display: block;
   // border:1px solid #021a40;
@@ -32,7 +37,7 @@ color: light-grey;
 // make non-headings slightly lighter
 .post-content p, .post-content li {
 font-size: 20px;
-color: #515151;
+color: #20c538;
 font-family: 'Noto Sans', sans-serif;
 }
 

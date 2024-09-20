@@ -4,6 +4,7 @@ title: Student Home
 description: Home Page
 image: /images/mario_animation.png
 hide: true
+comments: true
 ---
 
 
@@ -157,20 +158,20 @@ hide: true
 <br>
 
 <div>
-  <a href="game_menu/index_game.html"><button>Games Menu</button><a>
+  <a href="game_menu/index_game.html"><button>Games Menu</button></a>
 </div>
 
 <br>
 <br>
 
 <div>
-  <a href="calcs/sci_calc.html"><button>Scientific Calculator</button><a>
+  <a href="calcs/sci_calc.html"><button>Scientific Calculator</button></a>
 </div>
 
 <br>
 
 <div>
-  <a href="calcs/stat_calc.html"><button>Statistics Calculator</button><a>
+  <a href="calcs/stat_calc.html"><button>Statistics Calculator</button></a>
 </div>
 
 

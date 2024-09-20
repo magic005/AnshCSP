@@ -13,6 +13,10 @@
 // Mix Light themes with this if your eyes are bleeding 
 @import "minima/dracula/dark-mode";
 
-title, .page-header, h1, h2, h3, h4, p, li, a {
+title, .page-header,.post-title,.post-content h3,h1, h2, h3, h4, p, li, a {
     font-family: 'Noto Sans', sans-serif;
+}
+
+.highlight {
+    color: #da9090;
 }
