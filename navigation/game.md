@@ -16,10 +16,10 @@ permalink: /games/
         <h1>Welcome to the Game Menu!</h1>
         <nav>
             <ul>
-                <li><a href="Snake.html">Snake Game</a></li>
-                <li><a href="FlabbyBird.html">Flabby Bird</a></li>
-                <li><a href="Tanks.html">Tanks Game</a></li>
-                <li><a href="CookieClicker.html">Cookie Clicker</a></li>
+                <li><a href="../game_menu/Snake.html">Snake Game</a></li>
+                <li><a href="../game_menu/FlabbyBird.html">Flabby Bird</a></li>
+                <li><a href="../game_menu/Tanks.html">Tanks Game</a></li>
+                <li><a href="../game_menu/CookieClicker.html">Cookie Clicker</a></li>
             </ul>
         </nav>
     </header>
