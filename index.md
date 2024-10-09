@@ -151,7 +151,7 @@ comments: true
 <br>
 
 <div>
-  <a href="liverpool-fc/index.html" style="color: #1260cc"><button>Go to Liverpool FC Blog (cooperative tangible)</button></a>
+  <a href="liverpool-fc/index.html" style="color: #1260cc"><button>Go to Manchester United FC Blog (cooperative tangible)</button></a>
 </div>
 
 <br>
