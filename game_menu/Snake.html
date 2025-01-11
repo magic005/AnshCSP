@@ -1,66 +1,70 @@
 <style>
     body {
-        background-color: black;
+        background-color: #1b1b2f;
     }
 
-    .wrap{
+    .wrap {
         margin-left: auto;
         margin-right: auto;
     }
 
-    canvas{
+    canvas {
         display: none;
         border-style: solid;
         border-width: 10px;
-        border-color: #FFFFFF;
+        border-color: #ffcccb;
     }
-    canvas:focus{
+
+    canvas:focus {
         outline: none;
     }
 
-    /* All screens style */
-    #gameover p, #setting p, #menu p{
+    /* Christmas Colors and Styling */
+    #gameover p, #setting p, #menu p {
         font-size: 20px;
+        color: #e63946;
     }
 
-    #gameover a, #setting a, #menu a{
+    #gameover a, #setting a, #menu a {
         font-size: 30px;
         display: block;
+        color: #f4a261;
     }
 
-    #gameover a:hover, #setting a:hover, #menu a:hover{
+    #gameover a:hover, #setting a:hover, #menu a:hover {
         cursor: pointer;
+        color: #e76f51;
     }
 
-    #gameover a:hover::before, #setting a:hover::before, #menu a:hover::before{
-        content: "> ";
-        font-family:Gill Sans;
-        color: #845DE6;
+    #gameover a:hover::before, #setting a:hover::before, #menu a:hover::before {
+        content: "❄ "; /* Snowflake */
+        font-family: Gill Sans;
+        color: #2a9d8f;
     }
 
-    #menu{
+    #menu {
         display: block;
     }
 
-    #gameover{
+    #gameover {
         display: none;
     }
 
-    #setting{
+    #setting {
         display: none;
     }
 
-    #setting input{
-        display:none;
+    #setting input {
+        display: none;
     }
 
-    #setting label{
+    #setting label {
         cursor: pointer;
     }
 
-    #setting input:checked + label{
-        background: linear-gradient(to right, #A091FF, #9061BA); 
-        -webkit-text-fill-color: transparent; 
+    #setting input:checked + label {
+        background: linear-gradient(to right, #a8dadc, #457b9d);
+        -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }
 
@@ -68,111 +72,99 @@
         padding-top: 30px;
         left: 200px;
         font-size: 30px;
-        color: #0897CC;
-        font-family:Gill Sans;
+        color: #ffd700;
+        font-family: Gill Sans;
     }
 
     .py-4 {
         font-family: Gill Sans;
         font-size: 23px;
+        color: #f4f1de;
+    }
+
+    /* Christmas-themed Canvas Styling */
+    #snake {
+        background: linear-gradient(to bottom, #0a0f37, #2b5876);
+        border-color: #f4a261;
     }
 </style>
 
 <body>
-<div class="container">
-    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
-        <p class="fs-4" style="text-align: center;">🍏: <span id="score_value">0</span></p>
-    </header>
-    <br>
-    <br>
-    <br>
-    <div class="container bg-secondary" style="background: linear-gradient(to right, #35bde7, #0064cf); -webkit-text-fill-color: transparent; -webkit-background-clip: text;; text-align:center;">
-        <!-- Main Menu -->
-        <div id="menu" class="py-4 text-light">
-            <p>welcome to snake, press <span style="color: #FFFFFF">space</span> to begin</p>
-            <a id="new_game" style="font-size: 20px" class="link-alert">new game</a>
-            <a id="setting_menu" style="font-size: 20px" class="link-alert">settings</a>
-        </div>
-        <!-- Game Over -->
-        <div id="gameover" class="py-4 text-light">
-            <p>game over, press <span style="color: #FFFFFF">space</span> to try again</p>
-            <a id="new_game1" style="font-size: 20px" class="link-alert">new game</a>
-            <a id="setting_menu1" style="font-size: 20px" class="link-alert">settings</a>
-            <br>
-            <br>
-        </div>
-        <!-- Play Screen -->
-        <canvas id="snake" class="wrap" width="320" height="320" tabindex="1"></canvas>
-        <!-- Settings Screen -->
-        <div id="setting" class="py-4 text-light">
-            <p>settings screen, press <span style="color: #FFFFFF">space</span> to go back to playing</p>
-            <a id="new_game2" style="font-size: 20px" class="link-alert">new game</a>
-            <br>
-            <p>speed:
-                <input id="speed1" type="radio" name="speed" value="120" checked/>
-                <label for="speed1">slow</label>
-                <input id="speed2" type="radio" name="speed" value="75"/>
-                <label for="speed2">normal</label>
-                <input id="speed3" type="radio" name="speed" value="35"/>
-                <label for="speed3">fast</label>
-            </p>
-            <p>Food Emoji:
-                <select id="foodEmojiSelect">
-                    <option value="🍕">🍕</option>
-                    <option value="🍟">🍟</option>
-                    <option value="🍦">🍦</option>
-                    <option value="🍩">🍩</option>
-                    <option value="🍪">🍪</option>
-                    <option value="🎂">🎂</option>
-                    <option value="🧁">🧁</option>
-                    <option value="🥧">🥧</option>
-                    <option value="🍫">🍫</option>
-                    <option value="🍬">🍬</option>
-                    <option value="🍭">🍭</option>
-                    <option value="🍇">🍇</option>
-                    <option value="🍈">🍈</option>
-                    <option value="🍉">🍉</option>
-                    <option value="🍊">🍊</option>
-                    <option value="🍋">🍋</option>
-                    <option value="🍌">🍌</option>
-                    <option value="🍍">🍍</option>
-                    <option value="🍎">🍎</option>
-                    <option value="🍏">🍏</option>
-                    <option value="🍐">🍐</option>
-                    <option value="🍑">🍑</option>
-                    <option value="🍒">🍒</option>
-                    <option value="🍓">🍓</option>
-                    <option value="🥝">🥝</option>
-                    <option value="🍅">🍅</option>
-                </select>
-            </p>
-            <p>wall:
-                <input id="wallon" type="radio" name="wall" value="1" checked/>
-                <label for="wallon">on</label>
-                <input id="walloff" type="radio" name="wall" value="0"/>
-                <label for="walloff">off</label>
-            </p>
+    <div class="container">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <p class="fs-4" style="text-align: center;">⛄: <span id="score_value">0</span></p>
+        </header>
+        <br>
+        <br>
+        <br>
+        <div class="container bg-secondary" style="background: linear-gradient(to right, #ff7b54, #c9184a); -webkit-text-fill-color: transparent; -webkit-background-clip: text; text-align:center;">
+            <!-- Main Menu -->
+            <div id="menu" class="py-4 text-light">
+                <p>Welcome to Christmas Snake, press <span style="color: #FFFFFF">space</span> to begin</p>
+                <a id="new_game" style="font-size: 20px" class="link-alert">New Game</a>
+                <a id="setting_menu" style="font-size: 20px" class="link-alert">Settings</a>
+            </div>
+            <!-- Game Over -->
+            <div id="gameover" class="py-4 text-light">
+                <p>Game over, press <span style="color: #FFFFFF">space</span> to try again</p>
+                <a id="new_game1" style="font-size: 20px" class="link-alert">New Game</a>
+                <a id="setting_menu1" style="font-size: 20px" class="link-alert">Settings</a>
+                <br>
+                <br>
+            </div>
+            <!-- Play Screen -->
+            <canvas id="snake" class="wrap" width="320" height="320" tabindex="1"></canvas>
+            <!-- Settings Screen -->
+            <div id="setting" class="py-4 text-light">
+                <p>Settings screen, press <span style="color: #FFFFFF">space</span> to go back to playing</p>
+                <a id="new_game2" style="font-size: 20px" class="link-alert">New Game</a>
+                <br>
+                <p>Speed:
+                    <input id="speed1" type="radio" name="speed" value="120" checked />
+                    <label for="speed1">Slow</label>
+                    <input id="speed2" type="radio" name="speed" value="75" />
+                    <label for="speed2">Normal</label>
+                    <input id="speed3" type="radio" name="speed" value="35" />
+                    <label for="speed3">Fast</label>
+                </p>
+                <p>Food Emoji:
+                    <select id="foodEmojiSelect">
+                        <option value="⛄">⛄</option>
+                        <option value="❄">❄</option>
+                        <option value="🎄">🎄</option>
+                        <option value="🎅">🎅</option>
+                        <option value="🎁">🎁</option>
+                        <option value="⛷">⛷</option>
+                        <option value="🦌">🦌</option>
+                        <option value="🔔">🔔</option>
+                        <option value="🕯">🕯</option>
+                        <option value="🎶">🎶</option>
+                        <option value="🌟">🌟</option>
+                    </select>
+                </p>
+                <p>Wall:
+                    <input id="wallon" type="radio" name="wall" value="1" checked />
+                    <label for="wallon">On</label>
+                    <input id="walloff" type="radio" name="wall" value="0" />
+                    <label for="walloff">Off</label>
+                </p>
+            </div>
         </div>
     </div>
-</div>
 
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
 
-<div style="display: flex; justify-content: center; align-items: center;">
-    <a href="index_game.html"><button>Back to Menu</button></a>
-</div>
-
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <a href="index_game.html"><button>Back to Menu</button></a>
+    </div>
 </body>
 
 <!-- Audio -->
 <audio id="pointSound" src="audio/points21.wav" preload="auto"></audio>
 <audio id="lostSound" src="audio/game-over.mp3" preload="auto"></audio>
 <audio id="winnerSound" src="audio/winner.wav" preload="auto"></audio>
-
-
-
 
 <script>
 
@@ -476,4 +468,45 @@
             if(wall === 1){screen_snake.style.borderColor = "gray";}
         }
     })();
+
+    // Function to render a Christmas-themed background
+    function drawChristmasBackground(ctx, canvas) {
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, "#003366"); // Dark blue
+        gradient.addColorStop(1, "#006400"); // Dark green
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Draw snowflakes
+    for (let i = 0; i < 100; i++) {
+        ctx.fillStyle = "white";
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const size = Math.random() * 2 + 1; // Snowflake size
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+// Update the game loop
+let mainLoop = function () {
+    const canvas = document.getElementById("snake");
+    const ctx = canvas.getContext("2d");
+
+    // Draw Christmas-themed background
+    drawChristmasBackground(ctx, canvas);
+
+    // Paint snake
+    for (let i = 0; i < snake.length; i++) {
+        activeDot(snake[i].x, snake[i].y);
+    }
+
+    // Paint food
+    activeDot2(food.x, food.y);
+
+    // Game logic remains unchanged
+    setTimeout(mainLoop, snake_speed);
+};
+
 </script>
