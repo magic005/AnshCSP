@@ -45,7 +45,7 @@ jobs:
 
       - name: Execute conversion script
         run: |
-          source venv/bin/activate  # Activate virtual environment
+          source venv/bin/activate  # Activate virtual environmentt
           python scripts/convert_notebooks.py  # Run your Python script
       - name: Build with Jekyll
         run: |
